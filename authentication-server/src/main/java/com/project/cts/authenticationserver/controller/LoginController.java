@@ -56,10 +56,6 @@ public class LoginController {
 
 	}
 
-//	@GetMapping("/")
-//	public ResponseEntity<?> loginPage(@RequestHeader(name = "Authorization") String token) {
-//
-//		return ResponseEntity.ok("Welcome to auth service!!");
-//	}
+
 
 }

@@ -36,32 +36,13 @@ public class ProcessPensionController {
 			throw new InvalidTokenException("You are not allowed to access this resource!");
 		}
 		
-//		System.out.println("TOKEN VALUE::: "+token);
-//		System.out.println("AADHAR NUMBER::: "+input.getAadharNo());
-//		System.out.println("AADHAR OBJECT::: "+input);
+
 		
 		PensionerDetailOutput pensionerDetailOutput = pensionerDetailProxy.pensionerDetail(token, input.getAadharNo());
 		return processPensionService.getPensionAmount(pensionerDetailOutput);
 
 	}
 
-	/*
-	 * @PostMapping("ProcessPension-test") public PensionDetail
-	 * processPensionTest(@RequestBody ProcessPensionInput input) {
-	 * 
-	 * Map<String, String> uriVariable = new HashMap<>();
-	 * uriVariable.put("aadharNo", input.getAadharNo());
-	 * 
-	 * ResponseEntity<PensionerDetailOutput> responseEntity = new
-	 * RestTemplate().getForEntity(
-	 * "http://localhost:8081/PensionerDetailsByAadhar/{aadharNo}",
-	 * PensionerDetailOutput.class, uriVariable);
-	 * 
-	 * PensionerDetailOutput pensionerDetailOutput = responseEntity.getBody();
-	 * 
-	 * return processPensionService.getPensionAmount(pensionerDetailOutput);
-	 * 
-	 * }
-	 */
+
 
 }

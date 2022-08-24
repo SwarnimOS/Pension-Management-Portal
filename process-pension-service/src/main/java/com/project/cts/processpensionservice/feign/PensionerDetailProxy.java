@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import com.project.cts.processpensionservice.model.PensionerDetailOutput;
 
 //@FeignClient(name="pensioner-detail",url="localhost:8081")
-@FeignClient(name="pensioner-detail")
+//@FeignClient(name="pensioner-detail")
+@FeignClient(name="pensioner-detail",url="${PENSIONER_DETAIL_SERVICE:localhost:8081}")
 public interface PensionerDetailProxy {
 	
 	@GetMapping("PensionerDetailsByAadhar/{aadharNo}")

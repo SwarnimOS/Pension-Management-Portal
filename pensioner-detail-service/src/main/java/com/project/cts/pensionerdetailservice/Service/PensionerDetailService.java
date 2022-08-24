@@ -51,19 +51,7 @@ public class PensionerDetailService {
 		}
 		throw new AadharNotFoundException("Aadhar Card Not Found : AadharNumber - " + aadharNo);
 
-		/*
-		 * while ((line = br.readLine()) != null) {
-		 * 
-		 * String[] person = line.split(",");
-		 * 
-		 * 
-		 * if (aadharNo.equals(person[0])) {
-		 * 
-		 * 
-		 * return new PensionerDetail(person[0],person[1],person[2],person[3],
-		 * Double.parseDouble(person[4]),Double.parseDouble(person[5]),person[6], new
-		 * BankDetails(person[7],Long.parseLong(person[8]),person[9])); } } return null;
-		 */
+	
 
 	}
 }

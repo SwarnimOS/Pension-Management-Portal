@@ -55,6 +55,15 @@
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 			<version>3.1.3</version>
 		</dependency> -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.6.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -62,11 +71,30 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
+				<!-- <configuration>
 					<image>
-						<name>swarnim7299/pms-${project.artifactId}:${project.version}</name>
+						<name>swarnim7299/pmsV2-${project.artifactId}:${project.version}</name>
 					</image>
 					<pullPolicy>IF_NOT_PRESENT</pullPolicy>
+				</configuration> -->
+			</plugin>
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>dockerfile-maven-plugin</artifactId>
+				<version>1.4.13</version>
+				<executions>
+					<execution>
+						<id>default</id>
+						<goals>
+							<goal>build</goal>
+							<!-- <goal>push</goal> -->
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<repository>swarnim7299/pmsv2-${project.artifactId}</repository>
+					<tag>${project.version}</tag>
+					<skipDockerInfo>true</skipDockerInfo>
 				</configuration>
 			</plugin>
 		</plugins>
